@@ -26,6 +26,7 @@ docker-compose up --build
 
 This project is structured with external libraries and using bin files in mind. Feel free to change the `CMakeLists.txt` file to customize the behaviour of the compilation.
 
+<pre>
 [APP_ROOT]
 |- docker
 | |- dockerfile 
@@ -43,3 +44,4 @@ This project is structured with external libraries and using bin files in mind. 
 |- LICENSE
 |- README.md
 |- docker-compose.yaml
+</pre>
