@@ -24,7 +24,7 @@ docker-compose up --build
 
 ## Structure of the application
 
-This project is structured with external libraries and using bin files in mind. Feel free to change the `CMakeLists.txt` file to customize the behaviour of the compilation.
+This project is structured with external libraries and using bin files in mind. Feel free to change the `CMakeLists.txt` file to customize the behaviour of the compilation. X
 
 <pre>
 [APP_ROOT]
