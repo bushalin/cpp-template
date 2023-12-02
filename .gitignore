@@ -31,5 +31,5 @@
 *.out
 *.app
 
-.cache/
+/.cache
 /build
