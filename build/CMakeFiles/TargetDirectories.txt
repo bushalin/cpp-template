@@ -1,5 +1,0 @@
-/Users/hasibulhasan/awl/personal_work/c++/cpp_project_template/build/CMakeFiles/edit_cache.dir
-/Users/hasibulhasan/awl/personal_work/c++/cpp_project_template/build/CMakeFiles/rebuild_cache.dir
-/Users/hasibulhasan/awl/personal_work/c++/cpp_project_template/build/src/CMakeFiles/SAMPLE_APP.dir
-/Users/hasibulhasan/awl/personal_work/c++/cpp_project_template/build/src/CMakeFiles/edit_cache.dir
-/Users/hasibulhasan/awl/personal_work/c++/cpp_project_template/build/src/CMakeFiles/rebuild_cache.dir
