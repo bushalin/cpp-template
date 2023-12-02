@@ -1,8 +1,0 @@
-[
-{
-  "directory": "/Users/hasibulhasan/awl/personal_work/c++/cpp_project_template/build/src",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/hasibulhasan/awl/personal_work/c++/cpp_project_template/src -I/Users/hasibulhasan/awl/personal_work/c++/cpp_project_template/include/external/rapidjson -I/Users/hasibulhasan/awl/personal_work/c++/cpp_project_template/src/app  --coverage -std=c++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -o CMakeFiles/SAMPLE_APP.dir/main.cpp.o -c /Users/hasibulhasan/awl/personal_work/c++/cpp_project_template/src/main.cpp",
-  "file": "/Users/hasibulhasan/awl/personal_work/c++/cpp_project_template/src/main.cpp",
-  "output": "src/CMakeFiles/SAMPLE_APP.dir/main.cpp.o"
-}
-]
