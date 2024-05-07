@@ -1,18 +1,18 @@
 # Define a function for creating executable targets
-file(GLOB_RECURSE SOURCES "${SRC_DIR}/app/*.cpp*")
+file(GLOB_RECURSE SOURCES "${SRC_DIR}/application/*.cpp*")
 function(create_target TARGET_NAME SOURCE_FILE)
     add_executable(
         ${TARGET_NAME}
-        ${SRC_DIR}
         ${SOURCES}
         ${SOURCE_FILE}
     )
 
     target_link_libraries(
         ${TARGET_NAME}
-        # ${BUFFER_LIB_FILE}
-        # ${EXTERNAL_LIB_FILES}
-        # ${WRAPPER_LIBS}
+        "-Wl,--copy-dt-needed-entries,--no-as-needed"
+        m dl stdc++fs
+        uuid
+        ${EXTERNAL_LIB_FILES}
         dl
     )
 endfunction()
