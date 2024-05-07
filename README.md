@@ -1,21 +1,23 @@
 # CPP template
 
-This template is structured for setting up a `CPP` project quickly using `CMAKE`.
+This template is structured for setting up a `c++` project.
 
 ## Build and installation:
-Application can be build in two ways:
 
+Currently we are supporting two type of building process.
 1. CMAKE
-2. DOCKER
+2. Docker
 
+### CMAKE:
 
-1. **CMAKE:**
-Application name can be changed in the `build_application.sh` file. Simply change:
+For ease of use, change the application name in the `CMakeLists.txt` file and all should be good to go.
+
 ```bash
 APP_NAME="<desired_app_name>"
 ```
 
-2. **DOCKER:**
+### Docker:
+
 Dockerfile using `Ubuntu 18:04` as base. Run:
 
 ```bash
@@ -23,25 +25,31 @@ docker-compose up --build
 ```
 
 ## Structure of the application
-
-This project is structured with external libraries and using bin files in mind. Feel free to change the `CMakeLists.txt` file to customize the behaviour of the compilation. X
+Structure of the application is as follows:
 
 <pre>
-[APP_ROOT]
-|- docker
-| |- dockerfile 
-|- libs
-| |- external 
-| | |- Rapidjson 
-| |- internal 
-|- src
-| |- app 
-| |- main.cpp 
-| |- CMakeLists.txt 
-|- .clang-format
-|- .dockerignore
-|- CmakeLists.txt
-|- LICENSE
-|- README.md
-|- docker-compose.yaml
+.
+├── CMakeLists.txt
+├── LICENSE
+├── README.md
+├── build_application.sh
+├── docker
+│   └── dockerfile
+├── docker-compose.yaml
+├── libs
+│   ├── aarch64
+│   │   ├── include
+│   │   │   └── external
+│   │   └── lib
+│   │       └── external
+│   └── x86_64
+│       ├── include
+│       │   └── external
+│       └── lib
+│           └── external
+└── src
+    ├── CMakeLists.txt
+    └── main.cpp
 </pre>
+
+For including the libraries, just add the header files in the include directory. For `SO` files, use the `libs/{arch}/lib/` directory.
