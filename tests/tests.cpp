@@ -1,12 +1,10 @@
 #include <gtest/gtest.h>
-#include "another.hpp"
+#include "example.h"
 
 TEST(SampleAppTest, NameTest) {
-    Hasib h;
-    ASSERT_EQ("Md. Hasibul Hasan", h.GetName());
+    ASSERT_EQ("Hasib", GetAuthor());
 }
 
 TEST(SampleAppTest, NameNotNull) {
-    Hasib h;
-    ASSERT_NE("", h.GetName());
+    ASSERT_NE("", GetAuthor());
 }
