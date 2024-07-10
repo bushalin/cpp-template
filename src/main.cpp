@@ -1,9 +1,6 @@
-#include <iostream>
-#include "another.hpp"
+#include "example.h"
 
-int main() {
-  std::cout << "hello world" << std::endl;
-  Hasib h;
-  std::cout << h.GetName() << std::endl;
+int main(){
+  std::cout << "Hello World! from " << GetAuthor() << std::endl;
   return 0;
 }
