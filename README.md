@@ -35,33 +35,33 @@ Structure of the application is as follows:
 
 <pre>
  .
-├──  build_application.sh
-├──  CMakeLists.txt
-├──  docker
-│  └──  dockerfile
-├──  docker-compose.yaml
-├──  libs
-│  ├──  aarch64
-│  │  ├──  include
-│  │  │  └──  external
-│  │  └──  lib
-│  │     └──  external
-│  └──  x86_64
-│     ├──  include
-│     │  └──  external
-│     └──  lib
-│        └──  external
-├──  LICENSE
-├──  README.md
-├──  src
-│  ├──  application
-│  │  ├──  another.cpp
-│  │  └──  another.hpp
-│  ├──  CMakeLists.txt
-│  └──  main.cpp
-└──  tests
-   ├──  CMakeLists.txt
-   └──  tests.cpp
+├── build_application.sh
+├── CMakeLists.txt
+├── docker
+│  └── dockerfile
+├── docker-compose.yaml
+├── libs
+│  ├── aarch64
+│  │  ├── include
+│  │  │  └── external
+│  │  └── lib
+│  │     └── external
+│  └── x86_64
+│     ├── include
+│     │  └── external
+│     └── lib
+│        └── external
+├── LICENSE
+├── README.md
+├── src
+│  ├── application
+│  │  ├── another.cpp
+│  │  └── another.hpp
+│  ├── CMakeLists.txt
+│  └── main.cpp
+└── tests
+   ├── CMakeLists.txt
+   └── tests.cpp
 
 </pre>
 
