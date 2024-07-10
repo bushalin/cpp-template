@@ -4,52 +4,65 @@ This template is structured for setting up a `c++` project.
 
 ## Build and installation:
 
-Currently we are supporting two type of building process.
-1. CMAKE
-2. Docker
-
-### CMAKE:
-
-For ease of use, change the application name in the `CMakeLists.txt` file and all should be good to go.
+For building the application, we can use `build.sh` script in the application root directory.
 
 ```bash
-APP_NAME="<desired_app_name>"
+$ ./build.sh
+
+Hello World
 ```
 
-### Docker:
+Internally we are using `CMake` for the build. After a successful build, the executables should be generated in `/build/bin` directory.
 
-Dockerfile using `Ubuntu 18:04` as base. Run:
+### Executables:
+
+After the build, we can get the executable named `/build/bin/SAMPLE_APP`.
+
+We can run the executable as:
+```bash
+$ ./build/bin/SAMPLE_APP
+```
+By default, tests are also enabled for the project template. Building the application will automatically build the test executable named `SAMPLE_APP_test`.
+
+To run the tests, we need to run the generated test executable:
 
 ```bash
-docker-compose up --build
+$ ./build/bin/SAMPLE_APP_test
 ```
 
 ## Structure of the application
 Structure of the application is as follows:
 
 <pre>
-.
-├── CMakeLists.txt
-├── LICENSE
-├── README.md
-├── build_application.sh
-├── docker
-│   └── dockerfile
-├── docker-compose.yaml
-├── libs
-│   ├── aarch64
-│   │   ├── include
-│   │   │   └── external
-│   │   └── lib
-│   │       └── external
-│   └── x86_64
-│       ├── include
-│       │   └── external
-│       └── lib
-│           └── external
-└── src
-    ├── CMakeLists.txt
-    └── main.cpp
+ .
+├──  build_application.sh
+├──  CMakeLists.txt
+├──  docker
+│  └──  dockerfile
+├──  docker-compose.yaml
+├──  libs
+│  ├──  aarch64
+│  │  ├──  include
+│  │  │  └──  external
+│  │  └──  lib
+│  │     └──  external
+│  └──  x86_64
+│     ├──  include
+│     │  └──  external
+│     └──  lib
+│        └──  external
+├──  LICENSE
+├──  README.md
+├──  src
+│  ├──  application
+│  │  ├──  another.cpp
+│  │  └──  another.hpp
+│  ├──  CMakeLists.txt
+│  └──  main.cpp
+└──  tests
+   ├──  CMakeLists.txt
+   └──  tests.cpp
+
 </pre>
 
 For including the libraries, just add the header files in the include directory. For `SO` files, use the `libs/{arch}/lib/` directory.
