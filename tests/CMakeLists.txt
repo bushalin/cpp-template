@@ -5,6 +5,8 @@
 # Find all .cpp files in src/application
 file(GLOB_RECURSE APPLICATION_SOURCES "${SRC_DIR}/application/*.cpp")
 
+set(UNIT_TEST ${APP_NAME}_test)
+
 # Add GoogleTest
 include(GoogleTest)
 
@@ -23,4 +25,15 @@ function(create_test TARGET_NAME SOURCE_FILE)
 endfunction()
 
 # Create the test target
-create_test(${APP_NAME}_test ${TEST_DIR}/tests.cpp)
+create_test(${UNIT_TEST} ${TEST_DIR}/tests.cpp)
+add_test(
+    NAME ${UNIT_TEST}
+    COMMAND ${UNIT_TEST}
+)
+add_custom_command(
+     TARGET ${UNIT_TEST}
+     COMMENT "Run tests"
+     POST_BUILD 
+     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+     COMMAND ${CMAKE_CTEST_COMMAND} -C $<CONFIGURATION> -R "^${UNIT_TEST}$" --output-on-failures
+)
