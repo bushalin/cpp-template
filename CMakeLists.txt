@@ -20,6 +20,17 @@ message(STATUS "INCLUDE_DIR: ${INCLUDE_DIR}")
 set(SO_LIB_DIR ${LIBS_DIR}/lib)
 set(SRC_DIR ${CMAKE_SOURCE_DIR}/src)
 
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+)
+# For Windows: Prevent overriding the parent project's compiler/linker settings
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
+
+enable_testing()
+
 ## Setup include directory
 set(EXTERNAL_INCLUDE_DIR ${INCLUDE_DIR}/external)
 
@@ -30,8 +41,10 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/build/bin)
 set(EXTERNAL_INCLUDE_DIR ${INCLUDE_DIR}/external)
 
 ## Setup application include directory
-
 set(APPLICATION_INCLUDE_DIR ${SRC_DIR}/application)
+
+## Setup test directory
+set(TEST_DIR ${CMAKE_SOURCE_DIR}/tests)
 
 # set sub directory of external
 # set(OPENCV_INCLUDE_DIR ${EXTERNAL_INCLUDE_DIR}/opencv4)
@@ -48,3 +61,4 @@ include_directories(
 file(GLOB_RECURSE EXTERNAL_LIB_FILES "${SO_LIB_DIR}/*.so*")
 
 add_subdirectory(${SRC_DIR})
+add_subdirectory(${TEST_DIR})
